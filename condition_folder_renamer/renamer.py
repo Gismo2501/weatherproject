@@ -19,7 +19,7 @@ def main():
 
     while True:
         # Get file destination
-        input_csv_file = str(input("Bitte gib den Pfad der CSV Datei an!"))
+        input_csv_file = str(input("Bitte gib den Pfad der CSV Datei an!\n"))
         # check if input is empty
         if input_csv_file == "":
             print("Der Pfad darf nicht leer sein!")
@@ -30,7 +30,7 @@ def main():
             continue
         # User check if destination is correct
         print("Ist der Pfad korrekt? \n" + '"' + input_csv_file + '"')
-        input_correct_csv_file = str(input("Y für Ja | N für Nein | Andere Tasten für Abbruch"))
+        input_correct_csv_file = str(input("Y für Ja | N für Nein | Andere Tasten für Abbruch\n"))
 
         # Switch Case for these options
         match input_correct_csv_file:
@@ -48,14 +48,14 @@ def main():
 
     while True:
         # input folder destination
-        input_folder = str(input("Bitte gib den Pfad der Ordner an!"))
+        input_folder = str(input("Bitte gib den Pfad der Ordner an!\n"))
         # check if folder is empty
         if input_folder == "":
             print("Der Pfad darf nicht leer sein!")
             continue
         # User check if destination is correct
         print("Ist der Pfad korrekt? \n" + '"' + input_folder + '"')
-        input_correct_folder = str(input("Y für Ja | N für Nein | Andere Tasten für Abbruch"))
+        input_correct_folder = str(input("Y für Ja | N für Nein | Andere Tasten für Abbruch\n"))
 
         # Switch Case of these options
         match input_correct_folder:
@@ -88,11 +88,12 @@ def main():
         print("Die Datei ist unter: " + input_csv_file + " nicht vorhanden!"
                                                          "\nBitte starte das Programm erneut und gib den richtigen "
                                                          "Pfad an!")
+        quit()
 
     print("Folgende Ordner sind nicht vorhanden: ", nichtvorhanden)
 
     print("Möchten Sie mit der Umbennenung fortfahren?")
-    input_continue = str(input("Y für Ja | N für Nein | Andere Tasten für Abbruch"))
+    input_continue = str(input("Y für Ja | N für Nein | Andere Tasten für Abbruch\n"))
 
     # Switch Case of these options
     match input_continue:
