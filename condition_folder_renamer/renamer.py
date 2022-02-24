@@ -85,7 +85,8 @@ def main():
                     else:
                         print(row[0]+" ist vorhanden!")
     except FileNotFoundError:
-        print("Die Datei ist unter: " + input_csv_file + " nicht vorhanden!"
+        print("Die Datei ist unter: " + input_csv_file + " nicht vorhanden"
+                                                         "\noder der angegebene Ordner ist nicht vorhanden!"
                                                          "\nBitte starte das Programm erneut und gib den richtigen "
                                                          "Pfad an!")
         quit()
@@ -119,66 +120,69 @@ def rename_folder(folder, csv_file):
                 else:
                     if os.listdir(folder).__contains__(row[0]):
                         if row[0].__contains__("KUN") or row[0].__contains__("WO"):
-                            match row[1]:
-                                case "CONDITION\\MO":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case "CONDITION\\MM":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case "CONDITION\\PD":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case "CONDITION\\SL":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case "CONDITION\\OR":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case "CONDITION\\DW":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case "CONDITION\\TS":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                # lower
-                                case "CONDITION\\mo":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case "CONDITION\\mm":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case "CONDITION\\pd":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case "CONDITION\\sl":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case "CONDITION\\or":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case "CONDITION\\dw":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case "CONDITION\\ts":
-                                    name = row[1]
-                                    os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
-                                    print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
-                                case _:
-                                    print(row[0]," mit Owner: "+row[1]," wurde nicht verändert!")
+                            if not row[0].__contains__("MO") or row[0].__contains__("mo") or row[0].__contains__("MM") or row[0].__contains__("mm") or row[0].__contains__("PD") or row[0].__contains__("pd")or row[0].__contains__("SL")or row[0].__contains__("sl")or row[0].__contains__("OR")or row[0].__contains__("or")or row[0].__contains__("DW")or row[0].__contains__("dw")or row[0].__contains__("TS")or row[0].__contains__("ts"):
+                                match row[1]:
+                                    case "CONDITION\\MO":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case "CONDITION\\MM":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case "CONDITION\\PD":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case "CONDITION\\SL":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case "CONDITION\\OR":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case "CONDITION\\DW":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case "CONDITION\\TS":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    # lower
+                                    case "CONDITION\\mo":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case "CONDITION\\mm":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case "CONDITION\\pd":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case "CONDITION\\sl":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case "CONDITION\\or":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case "CONDITION\\dw":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case "CONDITION\\ts":
+                                        name = row[1]
+                                        os.rename(folder+"\\"+row[0], folder+"\\"+row[0]+"_"+name[10:])
+                                        print(row[0] + " wurde in ", row[0]+"_"+name[10:], " verändert!")
+                                    case _:
+                                        print(row[0]," mit Owner: "+row[1]," wurde nicht verändert!")
+                            else:
+                                print(row[0], " wurde nicht verändert.")
     except FileNotFoundError:
         print("Die Datei ist unter: " + csv_file + " nicht vorhanden!"
                                                          "\nBitte starte das Programm erneut und gib den richtigen "
