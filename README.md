@@ -24,3 +24,9 @@ Ordner KUN-9999 wurde von CONDITION\mf angelegt und wurde daher nicht umbenannt.
 6. DW
 7. TS
 8. DEFAULT = NICHS ÄNDERN!
+
+## Dinge die vermieden werden sollten!
+1. Spalte Owner als Hauptname verwenden (WO-MOXXX als Beispiel) --> Folder wird nicht umbenannt!
+2. .csv Datei falsch formatieren. Bitte nur CSV Dateien verwenden, welche als Trennzeichen ein ";" benutzen.
+3. Fragen stellen oder Errors produzieren
+
